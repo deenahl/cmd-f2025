@@ -13,8 +13,9 @@ function App ()
     //  References to the PhaserGame component (game and scene are exposed)
     const phaserRef = useRef();
     const [spritePosition, setSpritePosition] = useState({ x: 0, y: 0 });
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
-    const [isSDialogOpen, setIsSDialogOpen] = useState(false);
+    const [isBreatheDialogOpen, setIsBreatheDialogOpen] = useState(false);
+    const [isStretchDialogOpen, setIsStretchDialogOpen] = useState(false);
+    const [isJournalDialogOpen, setIsJournalDialogOpen] = useState(false);
 
     const changeScene = () => {
 
@@ -78,7 +79,7 @@ function App ()
         <div id="app">
             <PhaserGame ref={phaserRef} currentActiveScene={currentScene} />
             <button
-                onClick={() => setIsDialogOpen(true)}
+                onClick={() => setIsBreatheDialogOpen(true)}
                 style={{
                     position: 'absolute',
                     top: '30px',
@@ -93,9 +94,9 @@ function App ()
             >
             {''}
             </button>
-            {isDialogOpen && <BreathingDialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} />}
+            {isBreatheDialogOpen && <BreathingDialog open={isBreatheDialogOpen} onClose={() => setIsBreatheDialogOpen(false)} />}
             <button
-                onClick={() => setIsSDialogOpen(true)}
+                onClick={() => setIsStretchDialogOpen(true)}
                 style={{
                     position: 'absolute',
                     bottom: '40px',
@@ -110,7 +111,23 @@ function App ()
             >
             {''}
             </button>
-            {isSDialogOpen && <StretchingDialog open={isSDialogOpen} onClose={() => setIsSDialogOpen(false)} />}
+            {isStretchDialogOpen && <StretchingDialog open={isStretchDialogOpen} onClose={() => setIsSDialogOpen(false)} />}
+            <button
+                onClick={() => setIsJournalDialogOpen(true)}
+                style={{
+                    position: 'absolute',
+                    top: '100px',
+                    right: '280px',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    width: '280px',
+                    height: '230px',
+                    outline: 'none',
+                }}
+            >
+            {''}
+            </button>
         </div>
     )
 }

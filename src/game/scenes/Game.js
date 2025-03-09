@@ -42,9 +42,8 @@ export class Game extends Scene
         // map.createLayer('Hills', [hill_tileset]);
         map.createLayer('Hills', [hill_tileset, water_tileset, grass_tileset]);
         map.createLayer('Jen', [dirt_tileset, grass_tileset, water_tileset, hill_tileset]);
-        map.createLayer('House', [wall_tileset, door_tileset]);
-        map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset]);
-        // map.createLayer('Jen', []);
+        map.createLayer('House', [wall_tileset, door_tileset, roof_tileset]);
+        map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset, roof_tileset, hill_tileset]);
 
         // // Player setup
         player = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
