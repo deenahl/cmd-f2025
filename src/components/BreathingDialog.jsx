@@ -29,7 +29,7 @@ export default function BreathingDialog({ open, onClose }) {
           PaperProps={{
               style: { 
                   position: 'absolute', 
-                  top: '50%', 
+                  top: '30%', 
                   left: '50%', 
                   transform: 'translate(-50%, -50%)'
               }
@@ -42,7 +42,7 @@ export default function BreathingDialog({ open, onClose }) {
           </DialogTitle>
           <DialogContent>
               <DialogContentText sx={{color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 300}}>
-              {"Practicing deep breathing for 5 minutes a day is recommended to promote relaxation and focus. Find a quiet place to sit or stretch out, and let me know when you're ready to begin!"}
+              {"Deep breathing is recommended for 5 minutes a day. It involves focusing on full, cleansing breaths. Find a quiet place to sit or stretch out and let me know when you're ready to start"}
               </DialogContentText>
           </DialogContent>
           <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
