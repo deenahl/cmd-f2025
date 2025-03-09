@@ -39,107 +39,74 @@ export class Login extends Scene {
             key: 'cow-idle',
             frames: this.anims.generateFrameNumbers('cow', { 
                 frames: [2, 3, 4]
-            }),
-            frameRate: 4,
-            repeat: -1
-        });
-
+                    }),
+                frameRate: 4,
+                repeat: -1
+            });
+        
         this.add.sprite(512 - 128, 360, 'chick') 
             .setScale(5) 
             .play('chick-idle');
-
+        
         this.add.sprite(512 + 128, 350, 'cow')
             .setScale(3.5) 
             .play('cow-idle');
-
+        
         const leftRect = this.add.image(-50, 800, 'rectangle')
             .setScale(0.4)
             .setOrigin(0, 1); 
-            
+                    
         const rightRect = this.add.image(1074, 800, 'rectangle')
             .setScale(0.4)
             .setOrigin(1, 1);
 
-
-        // Add login button
-        const buttonWidth = 200;
-        const buttonHeight = 60;
-        const cornerRadius = 30;
-        const buttonY = 750; // Position button above the rectangle
-        const buttonX = 50; // Position button over the left rectangle
-        
-        // Create rounded rectangle background
-        const buttonBackground = this.add.graphics();
-        buttonBackground.fillStyle(0x8AB5BC);
-        buttonBackground.lineStyle(2, 0x000000);
-        buttonBackground.fillRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-        buttonBackground.strokeRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-        
-        const loginButton = this.add.text(340, 600, 'Click to Start', {
-            fontFamily: 'Arial Black',
-            fontSize: 20,
-            color: '#ffffff',
-            stroke: '#000000',
-            strokeThickness: 6,
-            padding: { x: 20, y: 10 }
-        })
-        .setOrigin(0.5)
-        .setInteractive({ useHandCursor: true })
-        .on('pointerover', () => {
-            buttonBackground.clear();
-            buttonBackground.fillStyle(0x8AB5BC);
-            buttonBackground.lineStyle(2, 0xffff00);
-            buttonBackground.fillRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            buttonBackground.strokeRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            loginButton.setStyle({ color: '#ffff00' });
-        })
-        .on('pointerout', () => {
-            buttonBackground.clear();
-            buttonBackground.fillStyle(0x8AB5BC);
-            buttonBackground.lineStyle(2, 0x000000);
-            buttonBackground.fillRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            buttonBackground.strokeRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            loginButton.setStyle({ color: '#ffffff' });
-        })
-        .on('pointerdown', () => this.handleLogin());
-
-        const rightButton = this.add.text(695, 600, 'Quit', {
-            fontFamily: 'Arial Black',
-            fontSize: 20,
-            color: '#ffffff',
-            stroke: '#000000',
-            strokeThickness: 6,
-            padding: { x: 20, y: 10 }
-        })
-        .setOrigin(0.5)
-        .setInteractive({ useHandCursor: true })
-        .on('pointerover', () => {
-            buttonBackground.clear();
-            buttonBackground.fillStyle(0x8AB5BC);
-            buttonBackground.lineStyle(2, 0xffff00);
-            buttonBackground.fillRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            buttonBackground.strokeRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            rightButton.setStyle({ color: '#ffff00' });
-        })
-        .on('pointerout', () => {
-            buttonBackground.clear();
-            buttonBackground.fillStyle(0x8AB5BC);
-            buttonBackground.lineStyle(2, 0x000000);
-            buttonBackground.fillRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            buttonBackground.strokeRoundedRect(buttonX, buttonY - buttonHeight/2, buttonWidth, buttonHeight, cornerRadius);
-            rightButton.setStyle({ color: '#ffffff' });
-        })
-        .on('pointerdown', () => {
-            // Quit the game
+        // Add buttons    
+        this.createButton(340, 600, 'Click to Start', () => this.handleLogin());
+        this.createButton(695, 600, 'Quit', () => {
             window.close();
             this.game.destroy(true);
         });
 
-
         EventBus.emit('current-scene-ready', this);
     }
+
+    createButton(x, y, text, onClick) {
+        const buttonWidth = 200;
+        const buttonHeight = 60;
+        const cornerRadius = 30;
+    
+        const buttonBg = this.add.graphics();
+        const drawButton = () => {
+            buttonBg.clear();
+            buttonBg.fillStyle(0x8AB5BC, 0);
+            buttonBg.fillRoundedRect(x - buttonWidth / 2, y - buttonHeight / 2, buttonWidth, buttonHeight, cornerRadius);
+        };
+    
+        drawButton(1);
+    
+        const buttonText = this.add.text(x, y, text, {
+            fontFamily: 'Arial Black',
+            fontSize: 20,
+            color: '#ffffff',
+            stroke: '#000000',
+            strokeThickness: 6,
+            padding: { x: 20, y: 10 }
+        })
+        .setOrigin(0.5)
+        .setInteractive({ useHandCursor: true })
+        .on('pointerover', () => {
+            drawButton(0);
+            buttonText.setStyle({ color: '#ffff00' });
+        })
+        .on('pointerout', () => {
+            drawButton(1);
+            buttonText.setStyle({ color: '#ffffff' });
+        })
+        .on('pointerdown', onClick);
+    }
+    
 
     handleLogin() {
         this.scene.start('Game');
     }
-} 
+}
