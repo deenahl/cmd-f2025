@@ -82,18 +82,9 @@ export class Game extends Scene
             player.anims.restart();
         }
 
-        // Check for meditation spot
-        if (!meditationDialogShown && 
-            player.x === 500 && 
-            player.y === 512) 
-        {
-            meditationDialogShown = true;
+        if (player.x == this.cameras.main.centerX - 10 && player.y == this.cameras.main.centerY) {
             new AlertBox(this);
         }
-
-        player.on('animationstop', function(currentAnim, currentFrame, sprite){
-            sprite.setTexture = 0;
-        });
     }
 
     changeScene ()
