@@ -42,9 +42,8 @@ export class Game extends Scene
         // map.createLayer('Hills', [hill_tileset]);
         map.createLayer('Hills', [hill_tileset, water_tileset, grass_tileset]);
         map.createLayer('Jen', [dirt_tileset, grass_tileset, water_tileset, hill_tileset]);
-        map.createLayer('House', [wall_tileset, door_tileset]);
-        map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset]);
-        // map.createLayer('Jen', []);
+        map.createLayer('House', [wall_tileset, door_tileset, roof_tileset]);
+        map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset, roof_tileset, hill_tileset]);
 
         // // Player setup
         player = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
@@ -91,14 +90,14 @@ export class Game extends Scene
         // cow.anims.play('cow', true);
 
         // Chicken Animations
-        chick = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'chick', 0).setScale(2.5);
-        this.anims.create({
-            key: 'chick',
-            frames: this.anims.generateFrameNames('chick', {start: 4, end: 8}),
-            frameRate: 10,
-            repeat: -1
-        });
-        chick.anims.play('chick', true);
+        // chick = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'chick', 0).setScale(2.5);
+        // this.anims.create({
+        //     key: 'chick',
+        //     frames: this.anims.generateFrameNames('chick', {start: 4, end: 8}),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
+        // chick.anims.play('chick', true);
         
         
         // this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
