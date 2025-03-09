@@ -26,7 +26,7 @@ export class Boot extends Scene
         this.load.image('rectangle', 'assets/Rectangle.png');
 
         this.load.image('grass', 'assets/tilemap/Grass.png');
-        this.load.image('hill_tiles', 'assets/tilemap/Hills.png');
+        this.load.image('hills', 'assets/tilemap/Hills.png');
         this.load.tilemapTiledJSON('map', 'assets/tilemap/map.json');
         this.load.spritesheet('player', 'assets/Characters/Basic Charakter Spritesheet.png', { frameWidth: 48, frameHeight: 48 });
     }

@@ -1,6 +1,7 @@
 import { EventBus } from '../EventBus';
 import { Scene } from 'phaser';
 
+const PLAYER_SPEED = 2;
 var cursors;
 var player;
 
@@ -15,11 +16,14 @@ export class Game extends Scene
     {
         // Create Tiled Map
         var map = this.make.tilemap({ key: "map" });
-        var grass_tileset = map.addTilesetImage('Hills','hill_tiles');
-        map.createLayer('hills', [grass_tileset]);
+        var hill_tileset = map.addTilesetImage('Hills','hills');
+        // var grass_tileset = map.addTilesetImage("Grass", "grass");
+        map.createLayer('Hills', [hill_tileset]);
+
+
 
         // // Player setup
-        player = this.add.sprite(512, 512, 'player').setScale(2.5);
+        player = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player').setScale(2.5);
 
         this.anims.create({
             key: 'player-left',
@@ -27,25 +31,57 @@ export class Game extends Scene
             frameRate: 10,
             repeat: 1
         });
+
+        this.anims.create({
+            key: 'player-right',
+            frames: this.anims.generateFrameNames('player', {start: 12, end: 15}),
+            frameRate: 10,
+            repeat: 1
+        });
+
+        this.anims.create({
+            key: 'player-down',
+            frames: this.anims.generateFrameNames('player', {start: 0, end: 3}),
+            frameRate: 10,
+            repeat: 1
+        });
+
+        this.anims.create({
+            key: 'player-up',
+            frames: this.anims.generateFrameNames('player', {start: 4, end: 7}),
+            frameRate: 10,
+            repeat: 1
+        });
         
         cursors = this.input.keyboard.createCursorKeys();
         
-        this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+        // this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     
         EventBus.emit('current-scene-ready', this);
     }
 
     update() {
         if (cursors.left.isDown) {
-            player.x -= 1;
+            player.x -= PLAYER_SPEED;
             player.anims.play('player-left', true);
+        } else if (cursors.right.isDown) {
+            player.x += PLAYER_SPEED;
+            player.anims.play('player-right', true);
+        } else if (cursors.down.isDown) {
+            player.y += PLAYER_SPEED;
+            player.anims.play('player-down', true);
+        } else if (cursors.up.isDown) {
+            player.y -= PLAYER_SPEED;
+            player.anims.play('player-up', true);
         } else {
-            player.anims.stop();
+            player.anims.pause();
         }
 
-        player.on('animationstop', function(currentAnim, currentFrame, sprite){
-            sprite.setTexture = 0;
-        });
+        
+
+        // player.on('animationstop', function(currentAnim, currentFrame, sprite){
+        //     sprite.frame = 0;
+        // });
         
     }
 
