@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 
 import Phaser from 'phaser';
 import { PhaserGame } from './game/PhaserGame';
+import MeditationDialog from './components/MeditationDialog'
 
 function App ()
 {
@@ -11,6 +12,7 @@ function App ()
     //  References to the PhaserGame component (game and scene are exposed)
     const phaserRef = useRef();
     const [spritePosition, setSpritePosition] = useState({ x: 0, y: 0 });
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
 
     const changeScene = () => {
 
@@ -86,7 +88,11 @@ function App ()
                 <div>
                     <button className="button" onClick={addSprite}>Add New Sprite</button>
                 </div>
+                <div>
+                    <button className="button" onClick={() => setIsDialogOpen(true)}>Dialog</button>
+                </div>
             </div>
+            {isDialogOpen && <MeditationDialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} />}
         </div>
     )
 }
