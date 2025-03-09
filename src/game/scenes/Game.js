@@ -7,7 +7,7 @@ var player;
 var cow;
 var chick;
 var journalCount = 1; 
-var journalCounterText;
+// var journalCounterText;
 // var player_start;
 
 
@@ -48,19 +48,20 @@ export class Game extends Scene
         const collision_layer = map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset, roof_tileset, hill_tileset]);
 
         // Add journal counter
-        journalCounterText = this.add.text(20, 20, 'Journal Entries: 0', {
-            fontFamily: 'Arial',
-            fontSize: '24px',
-            color: '#793205',
-            backgroundColor: '#dbca9b',
-            padding: { x: 10, y: 5 }
-        });
+        // journalCounterText = this.add.text(20, 20, 'Journal Entries: 0', {
+        //     fontFamily: 'Arial',
+        //     fontSize: '24px',
+        //     color: '#793205',
+        //     backgroundColor: '#dbca9b',
+        //     padding: { x: 10, y: 5 }
+        // });
 
         
 
 
         // // Player setup
         this.player = this.physics.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
+        this.physics.world.createDebugGraphic().setVisible(false);
         this.player.setImmovable(false);
         this.player.setCollideWorldBounds(true);
         this.player.body.setSize(16, 16);

@@ -15,7 +15,7 @@ export class Login extends Scene {
         bg.setScale(scale);
 
         // Add title
-        this.add.text(512, 200, 'Welcome!', {
+        this.add.text(512, 200, 'Mindful Meadows', {
             fontFamily: 'Arial Black',
             fontSize: 48,
             color: '#ffffff',
