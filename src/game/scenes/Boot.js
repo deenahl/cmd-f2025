@@ -36,7 +36,11 @@ export class Boot extends Scene
         this.load.image('water', 'assets/tilemap/Water.png');
         this.load.tilemapTiledJSON('map', 'assets/tilemap/map.json');
         this.load.spritesheet('player', 'assets/Characters/Basic Charakter Spritesheet.png', { frameWidth: 48, frameHeight: 48 });
-        this.load.spritesheet('tree', 'assets/Objects/Tree.png', { frameWidth: 14, frameHeight: 10 });
+        this.load.image('tree0', 'assets/Objects/Tree0.png');
+        this.load.image('tree1', 'assets/Objects/Tree1.png');
+        this.load.image('tree2', 'assets/Objects/Tree2.png');
+        this.load.image('tree3', 'assets/Objects/Tree3.png');
+        this.load.image('tree4', 'assets/Objects/Tree4.png');
     }
 
     create ()
