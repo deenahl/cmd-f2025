@@ -6,16 +6,20 @@ import Box from '@mui/material/Box';
 import { DialogContentText } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
+import { EventBus } from '../game/EventBus';
 
 // eslint-disable-next-line react/prop-types
 export default function Journal({ open, onClose }) {
     const [journalText, setJournalText] = useState('');
 
     const handleSave = () => {
+        localStorage.setItem('journalEntry', journalText);
+        EventBus.emit('journal-closed');
         onClose();
     };
 
     const handleClose = () => {
+        EventBus.emit('journal-closed');
         onClose();
     };
 
