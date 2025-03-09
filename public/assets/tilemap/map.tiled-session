@@ -16,11 +16,20 @@
         },
         "map.tmx": {
             "scale": 0.32,
-            "selectedLayer": 3,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 490.625,
+                "x": 976.5625,
                 "y": 420.3125
             }
+        },
+        "map.tmx#Dirt": {
+            "scaleInDock": 1
+        },
+        "map.tmx#Doors": {
+            "scaleInDock": 1
+        },
+        "map.tmx#Fences": {
+            "scaleInDock": 1
         },
         "map.tmx#Grass": {
             "scaleInDock": 1
@@ -28,8 +37,15 @@
         "map.tmx#Hills": {
             "scaleInDock": 1
         },
+        "map.tmx#House_Root": {
+            "scaleInDock": 1
+        },
         "map.tmx#House_Walls": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "map.tmx#Water": {
+            "scaleInDock": 1
         },
         "map.tmx#Wooden_House_Walls_Tilset": {
             "scaleInEditor": 1
