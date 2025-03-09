@@ -4,6 +4,7 @@ import Phaser from 'phaser';
 import { PhaserGame } from './game/PhaserGame';
 import BreathingDialog from './components/BreathingDialog'
 import StretchingDialog from './components/StretchingDialog';
+import JournalDialog from './components/JournalDialog';
 
 function App ()
 {
@@ -128,6 +129,7 @@ function App ()
             >
             {''}
             </button>
+            {isJournalDialogOpen && <JournalDialog open={isJournalDialogOpen} onClose={() => setIsJournalDialogOpen(false)} />}
         </div>
     )
 }
