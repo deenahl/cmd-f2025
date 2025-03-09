@@ -143,6 +143,6 @@ export class Login extends Scene {
     }
 
     handleLogin() {
-        this.scene.start('MainMenu');
+        this.scene.start('Game');
     }
 } 
