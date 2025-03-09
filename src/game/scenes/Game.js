@@ -106,7 +106,7 @@ export class Game extends Scene
         
         cursors = this.input.keyboard.createCursorKeys();
         // // Create Journal Trees
-        this.journalCrops = this.add.sprite(896, 208, 'tree0', journalCount);
+        this.journalCrops = this.add.sprite(910, 215, 'tree0', journalCount);
       
         // Cow Animations
         // cow = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'cow', 0).setScale(2.5);
