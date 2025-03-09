@@ -32,7 +32,7 @@ export default function Journal({ onClose }) {
                 <div style={{ textAlign: "center", margin: "auto", color: "#793205", fontWeight: 800 }}>
                     <h1>My Journal</h1>
                 </div>
-                <DialogContentText sx={{color: "#793205", textAlign: "center", mb: 3, fontFamily: "Arial, sans-serif"}}>
+                <DialogContentText sx={{color: "#793205", mb: 3, fontFamily: "Arial, sans-serif"}}>
                     Journaling helps reduce stress, improve mood, and enhance self-awareness. Take a moment to reflect on your thoughts and feelings.
                 </DialogContentText>
                 <DialogContentText sx={{color: "#793205", mb: 2, fontFamily: "Arial, sans-serif"}}>
