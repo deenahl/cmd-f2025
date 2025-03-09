@@ -77,26 +77,39 @@ function App ()
     return (
         <div id="app">
             <PhaserGame ref={phaserRef} currentActiveScene={currentScene} />
-            <div>
-                <div>
-                    <button className="button" onClick={changeScene}>Change Scene</button>
-                </div>
-                <div>
-                    <button disabled={canMoveSprite} className="button" onClick={moveSprite}>Toggle Movement</button>
-                </div>
-                <div className="spritePosition">Sprite Position:
-                    <pre>{`{\n  x: ${spritePosition.x}\n  y: ${spritePosition.y}\n}`}</pre>
-                </div>
-                <div>
-                    <button className="button" onClick={addSprite}>Add New Sprite</button>
-                </div>
-                <div>
-                    <button className="button" onClick={() => setIsDialogOpen(true)}>BDialog</button>
-                    <button className="button" onClick={() => setIsSDialogOpen(true)}>SDialog</button>
-
-                </div>
-            </div>
+            <button
+                onClick={() => setIsDialogOpen(true)}
+                style={{
+                    position: 'absolute',
+                    top: '10px',
+                    left: '150px',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    width: '200px',
+                    height: '200px',
+                    outline: 'none',
+                }}
+            >
+            {''}
+            </button>
             {isDialogOpen && <BreathingDialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} />}
+            <button
+                onClick={() => setIsSDialogOpen(true)}
+                style={{
+                    position: 'absolute',
+                    bottom: '10px',
+                    right: '150px',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    width: '200px',
+                    height: '200px',
+                    outline: 'none',
+                }}
+            >
+            {''}
+            </button>
             {isSDialogOpen && <StretchingDialog open={isSDialogOpen} onClose={() => setIsSDialogOpen(false)} />}
         </div>
     )
