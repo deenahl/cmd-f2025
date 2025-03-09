@@ -29,7 +29,7 @@ export class Game extends Scene
         var water_tileset = map.addTilesetImage("Water", 'water');
         map.createLayer('Hills', [hill_tileset]);
         map.createLayer('House', [wall_tileset, door_tileset]);
-        map.createLayer('Britney', []);
+        map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset]);
         map.createLayer('Jen', []);
         // map.createFromObjects('land_object', {
         //     name: "land",
