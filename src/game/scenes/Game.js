@@ -56,6 +56,13 @@ export class Game extends Scene
             padding: { x: 10, y: 5 }
         });
 
+        // // Create Journal Trees
+        this.journalCrops = this.physics.add.sprite(896, 208, 'tree').setScale(1);
+        this.journalCrops.setImmovable(true);
+        this.journalCrops.body.setSize(14, 10);
+        // this.journalCrops.setFrame(0);
+
+
         // // Player setup
         this.player = this.physics.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
         this.player.setImmovable(false);
@@ -145,6 +152,11 @@ export class Game extends Scene
     update() {
         // cow.anims.play('cow', true);
         this.player.setVelocity(0);
+        // this.journalCrops.sprite.frame = journalCount % 5;
+        // this.journalCrops.setFrame(journalCount);
+        if (this.scene.isActive) {
+            this.journalCrops.setFrame(journalCount);
+        }
 
         if (cursors.left.isDown) {
             // player.x -= PLAYER_SPEED;
@@ -163,6 +175,8 @@ export class Game extends Scene
             this.player.setVelocity(0);
             this.player.anims.restart();
         }
+
+        
     }
 
     changeScene ()
