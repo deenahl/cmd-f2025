@@ -1,9 +1,10 @@
-
 import { EventBus } from '../EventBus';
 import { Scene } from 'phaser';
+import { AlertBox } from '../components/AlertBox';
 
 var cursors;
 var player;
+var meditationDialogShown = false;
 
 export class Game extends Scene
 {
@@ -44,10 +45,18 @@ export class Game extends Scene
             player.anims.stop();
         }
 
+        // Check for meditation spot
+        if (!meditationDialogShown && 
+            player.x === 500 && 
+            player.y === 512) 
+        {
+            meditationDialogShown = true;
+            new AlertBox(this);
+        }
+
         player.on('animationstop', function(currentAnim, currentFrame, sprite){
             sprite.setTexture = 0;
         });
-        
     }
 
     changeScene ()
