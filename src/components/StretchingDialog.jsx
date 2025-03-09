@@ -29,7 +29,7 @@ export default function StretchingDialog({ open, onClose }) {
           PaperProps={{
               style: { 
                   position: 'absolute', 
-                  top: '30%', 
+                  top: '50%', 
                   left: '50%', 
                   transform: 'translate(-50%, -50%)'
               }
@@ -42,7 +42,7 @@ export default function StretchingDialog({ open, onClose }) {
           </DialogTitle>
           <DialogContent>
               <DialogContentText sx={{color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 300}}>
-              {"It is recommended to stretch for 5 minutes a day. Stretching helps to Blegh. Find a spacious area to stretch out and let me know when you're ready to start"}
+              {"Stretching for just 5 minutes a day is highly recommended, as it helps improve flexibility and well-being. Find a spacious area to stretch comfortably, and let me know when you're ready to begin!"}
               </DialogContentText>
           </DialogContent>
           <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
