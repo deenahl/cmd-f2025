@@ -8,15 +8,18 @@
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
         "#Grass": {
             "scaleInDock": 1
         },
         "map.tmx": {
-            "scale": 0.51,
+            "scale": 0.529,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 458.82352941176475,
-                "y": 473.5294117647059
+                "x": 502.8355387523629,
+                "y": 324.19659735349717
             }
         },
         "map.tmx#Grass": {
@@ -24,6 +27,9 @@
         },
         "map.tmx#Hills": {
             "scaleInDock": 1
+        },
+        "map.tmx#Wooden_House_Walls_Tilset": {
+            "scaleInEditor": 1
         }
     },
     "last.exportedFilePath": "/Users/deenahlaron/cmd-f 2025/cmd-f2025/public/assets/tilemap",
