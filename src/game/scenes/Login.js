@@ -44,24 +44,21 @@ export class Login extends Scene {
             repeat: -1
         });
 
-        // Add chick sprite below welcome text
         this.add.sprite(512 - 128, 360, 'chick') 
             .setScale(5) 
             .play('chick-idle');
 
-        // Add cow sprite next to chick
-        this.add.sprite(512 + 128, 350, 'cow') // 128 pixels right of center (quarter of half-width)
-            .setScale(3.5)  // Cow sprite is 32x32, so we use half the scale of chick
+        this.add.sprite(512 + 128, 350, 'cow')
+            .setScale(3.5) 
             .play('cow-idle');
 
-        // Add rectangles in bottom corners
         const leftRect = this.add.image(-50, 800, 'rectangle')
             .setScale(0.4)
-            .setOrigin(0, 1); // Origin at bottom-left corner
+            .setOrigin(0, 1); 
             
         const rightRect = this.add.image(1074, 800, 'rectangle')
             .setScale(0.4)
-            .setOrigin(1, 1); // Origin at bottom-right corner
+            .setOrigin(1, 1);
 
 
         // Add login button

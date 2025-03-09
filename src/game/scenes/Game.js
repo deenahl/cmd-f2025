@@ -1,10 +1,12 @@
 import { EventBus } from '../EventBus';
 import { Scene } from 'phaser';
+import { AlertBox } from '../components/AlertBox';
 
 const PLAYER_SPEED = 2;
 var cursors;
 var player;
 // var player_start;
+
 
 export class Game extends Scene
 {
@@ -93,12 +95,9 @@ export class Game extends Scene
             player.anims.restart();
         }
 
-        
-
-        // player.on('animationstop', function(currentAnim, currentFrame, sprite){
-        //     sprite.frame = 0;
-        // });
-        
+        if (player.x == this.cameras.main.centerX - 10 && player.y == this.cameras.main.centerY) {
+            new AlertBox(this);
+        }
     }
 
     changeScene ()
