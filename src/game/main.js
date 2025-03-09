@@ -21,7 +21,14 @@ const config = {
         MainMenu,
         Game,
         GameOver,
-    ]
+    ],
+    physics: {
+        default: 'arcade',  // Enable physics
+        arcade: {
+            gravity: { y: 0 },  // Gravity affects objects
+            debug: true           // Show collision boxes (for debugging)
+        }
+    },
 };
 
 const StartGame = (parent) => {

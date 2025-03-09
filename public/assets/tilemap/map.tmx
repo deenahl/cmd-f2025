@@ -27,7 +27,30 @@
  <tileset firstgid="302" name="Water" tilewidth="16" tileheight="16" tilecount="4" columns="4">
   <image source="Water.png" width="64" height="16"/>
  </tileset>
-<<<<<<< Updated upstream
+  <tileset firstgid="306" name="Furniture" tilewidth="16" tileheight="16" tilecount="54" columns="9">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" width="144" height="96"/>
+ </tileset>
+ <tileset firstgid="360" name="Biom" tilewidth="16" tileheight="16" tilecount="45" columns="9">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" width="144" height="80"/>
+ </tileset>
+ <tileset firstgid="405" name="Plants" tilewidth="16" tileheight="16" tilecount="12" columns="6">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" width="96" height="32"/>
+ </tileset>
+ <tileset firstgid="417" name="Chest" tilewidth="16" tileheight="16" tilecount="90" columns="15">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Chest.png" width="240" height="96"/>
+ </tileset>
+ <tileset firstgid="507" name="Milk" tilewidth="16" tileheight="16" tilecount="4" columns="4">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Simple_Milk_and_grass_item.png" width="64" height="16"/>
+ </tileset>
+ <tileset firstgid="511" name="Bridge" tilewidth="16" tileheight="16" tilecount="15" columns="5">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Wood_Bridge.png" width="80" height="48"/>
+ </tileset>
+ <tileset firstgid="526" name="Chicken_House" tilewidth="16" tileheight="16" tilecount="9" columns="3">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" width="48" height="48"/>
+ </tileset>
+ <tileset firstgid="535" name="Paths" tilewidth="16" tileheight="16" tilecount="16" columns="4">
+  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Paths.png" width="64" height="64"/>
+ </tileset>
  <layer id="1" name="Hills" width="64" height="48" visible="0">
   <data encoding="csv">
 89,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,303,
@@ -132,32 +155,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
-=======
- <tileset firstgid="306" name="Furniture" tilewidth="16" tileheight="16" tilecount="54" columns="9">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" width="144" height="96"/>
- </tileset>
- <tileset firstgid="360" name="Biom" tilewidth="16" tileheight="16" tilecount="45" columns="9">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" width="144" height="80"/>
- </tileset>
- <tileset firstgid="405" name="Plants" tilewidth="16" tileheight="16" tilecount="12" columns="6">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" width="96" height="32"/>
- </tileset>
- <tileset firstgid="417" name="Chest" tilewidth="16" tileheight="16" tilecount="90" columns="15">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Chest.png" width="240" height="96"/>
- </tileset>
- <tileset firstgid="507" name="Milk" tilewidth="16" tileheight="16" tilecount="4" columns="4">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Simple_Milk_and_grass_item.png" width="64" height="16"/>
- </tileset>
- <tileset firstgid="511" name="Bridge" tilewidth="16" tileheight="16" tilecount="15" columns="5">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Wood_Bridge.png" width="80" height="48"/>
- </tileset>
- <tileset firstgid="526" name="Chicken_House" tilewidth="16" tileheight="16" tilecount="9" columns="3">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" width="48" height="48"/>
- </tileset>
- <tileset firstgid="535" name="Paths" tilewidth="16" tileheight="16" tilecount="16" columns="4">
-  <image source="../../../Sprout Lands - Sprites - Basic pack/Objects/Paths.png" width="64" height="64"/>
- </tileset>
->>>>>>> Stashed changes
  <layer id="6" name="House" width="64" height="48">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
