@@ -30,19 +30,19 @@ export class Preloader extends Scene
     preload ()
     {
         //  Load the assets for the game - Replace with your own assets
-        this.load.setPath('assets');
+        // this.load.setPath('assets');
 
-        // this.load.image('logo', 'logo.png');
-        // this.load.image('star', 'star.png');
+        // // this.load.image('logo', 'logo.png');
+        // // this.load.image('star', 'star.png');
 
-        // Load map assets
-        this.load.image('grass', 'tilemap/Grass.png');
-        this.load.image('hill_tiles', 'tilemap/Hills.png');
-        this.load.tilemapTiledJSON('map', 'tilemap/map.json');
+        // // Load map assets
+        // this.load.image('grass', 'tilemap/Grass.png');
+        // this.load.image('hill_tiles', 'tilemap/Hills.png');
+        // this.load.tilemapTiledJSON('map', 'tilemap/map.json');
 
-        // Load character assets
-        this.load.spritesheet('player', 'Characters/Basic Charakter Spritesheet.png', { frameWidth: 48, frameHeight: 48 },
-        );
+        // // Load character assets
+        // this.load.spritesheet('player', 'Characters/Basic Charakter Spritesheet.png', { frameWidth: 48, frameHeight: 48 },
+        // );
 
     }
 
