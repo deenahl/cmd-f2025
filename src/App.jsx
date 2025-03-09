@@ -81,13 +81,13 @@ function App ()
                 onClick={() => setIsDialogOpen(true)}
                 style={{
                     position: 'absolute',
-                    top: '10px',
-                    left: '150px',
+                    top: '30px',
+                    left: '360px',
                     background: 'transparent',
                     border: 'none',
                     cursor: 'pointer',
-                    width: '200px',
-                    height: '200px',
+                    width: '320px',
+                    height: '210px',
                     outline: 'none',
                 }}
             >
@@ -98,13 +98,13 @@ function App ()
                 onClick={() => setIsSDialogOpen(true)}
                 style={{
                     position: 'absolute',
-                    bottom: '10px',
-                    right: '150px',
+                    bottom: '40px',
+                    right: '360px',
                     background: 'transparent',
                     border: 'none',
                     cursor: 'pointer',
-                    width: '200px',
-                    height: '200px',
+                    width: '320px',
+                    height: '210px',
                     outline: 'none',
                 }}
             >
