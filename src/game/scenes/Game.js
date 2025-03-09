@@ -41,7 +41,7 @@ export class Game extends Scene
 
         // create layers
         const hill_layer = map.createLayer('Hills', [hill_tileset, water_tileset, grass_tileset]);
-        map.createLayer('Jen', [dirt_tileset, grass_tileset, water_tileset, hill_tileset]);
+        const water_layer = map.createLayer('Jen', [dirt_tileset, grass_tileset, water_tileset, hill_tileset]);
         const house_layer = map.createLayer('House', [wall_tileset, door_tileset, roof_tileset]);
         const collision_layer = map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset, roof_tileset, hill_tileset]);
 
@@ -53,8 +53,8 @@ export class Game extends Scene
         this.player.body.setOffset(16, 16);
 
         // collision setup
-        hill_layer.setCollision([303]);
-        this.physics.add.collider(this.player, hill_layer);
+        water_layer.setCollision([303]);
+        this.physics.add.collider(this.player, water_layer);
         house_layer.setCollisionBetween(283, 295);
         this.physics.add.collider(this.player, house_layer);
         collision_layer.setCollision([80, 233, 234, 235, 236, 237, 241, 243, 244, 246, 302, 303, 304, 305]);
