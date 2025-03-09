@@ -15,11 +15,11 @@
             "scaleInDock": 1
         },
         "map.tmx": {
-            "scale": 0.529,
-            "selectedLayer": 0,
+            "scale": 0.32,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 502.8355387523629,
-                "y": 324.19659735349717
+                "x": 490.625,
+                "y": 420.3125
             }
         },
         "map.tmx#Grass": {
@@ -28,12 +28,15 @@
         "map.tmx#Hills": {
             "scaleInDock": 1
         },
+        "map.tmx#House_Walls": {
+            "scaleInEditor": 1
+        },
         "map.tmx#Wooden_House_Walls_Tilset": {
             "scaleInEditor": 1
         }
     },
     "last.exportedFilePath": "/Users/deenahlaron/cmd-f 2025/cmd-f2025/public/assets/tilemap",
-    "last.imagePath": "/Users/deenahlaron/cmd-f 2025/cmd-f2025/public/assets/tilemap",
+    "last.imagePath": "/Users/deenahlaron/cmd-f 2025/cmd-f2025/Sprout Lands - Sprites - Basic pack/Objects",
     "map.height": 96,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
