@@ -41,7 +41,8 @@ export class Preloader extends Scene
         this.load.tilemapTiledJSON('map', 'tilemap/map.json');
 
         // Load character assets
-        this.load.image('player', 'Characters/Basic Charakter Spritesheet.png'), { frameWidth: 48, frameHeight: 48 };
+        this.load.spritesheet('player', 'Characters/Basic Charakter Spritesheet.png', { frameWidth: 48, frameHeight: 48 },
+        );
 
     }
 
