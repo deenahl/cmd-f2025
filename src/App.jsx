@@ -2,7 +2,8 @@ import { useRef, useState } from 'react';
 
 import Phaser from 'phaser';
 import { PhaserGame } from './game/PhaserGame';
-import MeditationDialog from './components/MeditationDialog'
+import BreathingDialog from './components/BreathingDialog'
+import StretchingDialog from './components/StretchingDialog';
 
 function App ()
 {
@@ -13,6 +14,7 @@ function App ()
     const phaserRef = useRef();
     const [spritePosition, setSpritePosition] = useState({ x: 0, y: 0 });
     const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [isSDialogOpen, setIsSDialogOpen] = useState(false);
 
     const changeScene = () => {
 
@@ -75,24 +77,40 @@ function App ()
     return (
         <div id="app">
             <PhaserGame ref={phaserRef} currentActiveScene={currentScene} />
-            <div>
-                <div>
-                    <button className="button" onClick={changeScene}>Change Scene</button>
-                </div>
-                <div>
-                    <button disabled={canMoveSprite} className="button" onClick={moveSprite}>Toggle Movement</button>
-                </div>
-                <div className="spritePosition">Sprite Position:
-                    <pre>{`{\n  x: ${spritePosition.x}\n  y: ${spritePosition.y}\n}`}</pre>
-                </div>
-                <div>
-                    <button className="button" onClick={addSprite}>Add New Sprite</button>
-                </div>
-                <div>
-                    <button className="button" onClick={() => setIsDialogOpen(true)}>Dialog</button>
-                </div>
-            </div>
-            {isDialogOpen && <MeditationDialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} />}
+            <button
+                onClick={() => setIsDialogOpen(true)}
+                style={{
+                    position: 'absolute',
+                    top: '10px',
+                    left: '150px',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    width: '200px',
+                    height: '200px',
+                    outline: 'none',
+                }}
+            >
+            {''}
+            </button>
+            {isDialogOpen && <BreathingDialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} />}
+            <button
+                onClick={() => setIsSDialogOpen(true)}
+                style={{
+                    position: 'absolute',
+                    bottom: '10px',
+                    right: '150px',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    width: '200px',
+                    height: '200px',
+                    outline: 'none',
+                }}
+            >
+            {''}
+            </button>
+            {isSDialogOpen && <StretchingDialog open={isSDialogOpen} onClose={() => setIsSDialogOpen(false)} />}
         </div>
     )
 }

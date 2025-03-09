@@ -5,16 +5,22 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Box from '@mui/material/Box';
+import BreathingCountdown from './BreathingCountdown';
+import {useState} from 'react';
 
 // eslint-disable-next-line react/prop-types
-export default function AlertDialog({ open, onClose }) {
+export default function BreathingDialog({ open, onClose }) {
+  const [isReady, setIsReady] = useState(false);
+
     const handleClose = () => {
         onClose();
     }
 
+    const handleTimer = () => {
+      setIsReady(true);
+    }
+
     return (
-      <div>
-      <logoImg></logoImg>
       <Dialog
         open={open}
         onClose={onClose}
@@ -23,12 +29,13 @@ export default function AlertDialog({ open, onClose }) {
           PaperProps={{
               style: { 
                   position: 'absolute', 
-                  top: '50%', 
+                  top: '30%', 
                   left: '50%', 
-                  transform: 'translate(-50%, -50%)' 
+                  transform: 'translate(-50%, -50%)'
               }
           }}
       >
+      { !isReady ? (
         <Box sx={{backgroundColor: "#ece3ca"}}>
           <DialogTitle sx={{color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800}}>
               {"Practice Deep Breathing"}
@@ -41,15 +48,17 @@ export default function AlertDialog({ open, onClose }) {
           <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button sx={{width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
               backgroundColor: "#c2b693"},}} onClick={handleClose}>
-                {"Another Time"}
+                {"Not Yet"}
             </Button>
             <Button sx={{width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
-               backgroundColor: "#c2b693"},}} onClick={handleClose}>
+               backgroundColor: "#c2b693"},}} onClick={handleTimer}>
                 {"I'm Ready"}
             </Button>
           </DialogActions>
         </Box>
+      ) : (
+        <BreathingCountdown onClose={onClose}></BreathingCountdown>
+      )}
       </Dialog>
-      </div>
     );
   }
