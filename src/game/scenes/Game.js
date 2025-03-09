@@ -4,6 +4,7 @@ import { Scene } from 'phaser';
 const PLAYER_SPEED = 2;
 var cursors;
 var player;
+// var player_start;
 
 export class Game extends Scene
 {
@@ -23,7 +24,8 @@ export class Game extends Scene
 
 
         // // Player setup
-        player = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player').setScale(2.5);
+        player = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
+        // player_start = player.frame;
 
         this.anims.create({
             key: 'player-left',
@@ -74,7 +76,8 @@ export class Game extends Scene
             player.y -= PLAYER_SPEED;
             player.anims.play('player-up', true);
         } else {
-            player.anims.pause();
+            player.stop();
+            player.anims.restart();
         }
 
         
