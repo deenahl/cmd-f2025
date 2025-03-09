@@ -90,14 +90,14 @@ export class Game extends Scene
         // cow.anims.play('cow', true);
 
         // Chicken Animations
-        chick = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'chick', 0).setScale(2.5);
-        this.anims.create({
-            key: 'chick',
-            frames: this.anims.generateFrameNames('chick', {start: 4, end: 8}),
-            frameRate: 10,
-            repeat: -1
-        });
-        chick.anims.play('chick', true);
+        // chick = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'chick', 0).setScale(2.5);
+        // this.anims.create({
+        //     key: 'chick',
+        //     frames: this.anims.generateFrameNames('chick', {start: 4, end: 8}),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
+        // chick.anims.play('chick', true);
         
         
         // this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
