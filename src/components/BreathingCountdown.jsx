@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import { DialogContentText } from "@mui/material";
 
 // eslint-disable-next-line react/prop-types
-export default function BreathingCountdown({ onClose }) {
+export default function BreathingCountdown({ onClose, changeScene }) {
     const [timer, setTimer] = useState("05:00");
     const [isPaused, setIsPaused] = useState(false);
     const [remainingTime, setRemainingTime] = useState(5 * 60 * 1000);
@@ -55,6 +55,8 @@ export default function BreathingCountdown({ onClose }) {
 
     const onTimerEnd = () => {
         clearInterval(timerRef.current);
+        console.log("Timer ended, changing scene...");
+        changeScene('Game');
         onClose();
     };
 
@@ -87,48 +89,57 @@ export default function BreathingCountdown({ onClose }) {
     }, []);
 
     return (
-    <Box sx={{backgroundColor: "#ece3ca"}}>
-      <DialogContent>
-        <div style={{ textAlign: "center", margin: "auto", color: "#793205", fontWeight: 800 }}>
-            <h1>{timer}</h1>
-        </div>
-        <DialogContentText sx={{color: "#793205"}}>
-            {<strong>1. </strong>}
-            {"Put one hand on your chest and the other on your stomach."}
-            <br />
-            {<strong>2. </strong>}
-            {"Breathe in through your nose. Feel the hand on your stomach rise"}
-            <br />
-            <div style={{ paddingLeft: '20px' }}>
-            {"while your chest stays still."}
-            </div>
-            {<strong>3. </strong>}
-            {"Exhale through your mouth and push out as much air as you can."}
-            <br />
-            <div style={{ paddingLeft: '20px' }}>
-            {"Feel the hand on your stomach move in while your chest stays still."}
-            </div>
-            {<strong>4. </strong>}
-            {"Continue to breathe in through your nose and out through your mouth."}
-      </DialogContentText>
-      </DialogContent>
-      <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        {isPaused ? (
-            <Button sx={{width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
-            backgroundColor: "#c2b693"},}} onClick={onClickStart}>
-                {"Start Timer"}
-            </Button>
-        ) : (
-            <Button sx={{width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
-            backgroundColor: "#c2b693"},}} onClick={onClickPause}>
-                {"Pause Timer"}
-            </Button>
-        )}
-        <Button sx={{width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
-            backgroundColor: "#c2b693"},}} onClick={onClickReset}>
-              {"Reset Timer"}
-        </Button>
-      </DialogActions>
-    </Box>
+        <Box sx={{ backgroundColor: "#ece3ca" }}>
+            <DialogContent>
+                <div style={{ textAlign: "center", margin: "auto", color: "#793205", fontWeight: 800 }}>
+                    <h1>{timer}</h1>
+                </div>
+                <DialogContentText sx={{ color: "#793205" }}>
+                    {<strong>1. </strong>}
+                    {"Put one hand on your chest and the other on your stomach."}
+                    <br />
+                    {<strong>2. </strong>}
+                    {"Breathe in through your nose. Feel the hand on your stomach rise"}
+                    <br />
+                    <div style={{ paddingLeft: '20px' }}>
+                        {"while your chest stays still."}
+                    </div>
+                    {<strong>3. </strong>}
+                    {"Exhale through your mouth and push out as much air as you can."}
+                    <br />
+                    <div style={{ paddingLeft: '20px' }}>
+                        {"Feel the hand on your stomach move in while your chest stays still."}
+                    </div>
+                    {<strong>4. </strong>}
+                    {"Continue to breathe in through your nose and out through your mouth."}
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                {isPaused ? (
+                    <Button sx={{
+                        width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
+                            backgroundColor: "#c2b693"
+                        },
+                    }} onClick={onClickStart}>
+                        {"Start Timer"}
+                    </Button>
+                ) : (
+                    <Button sx={{
+                        width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
+                            backgroundColor: "#c2b693"
+                        },
+                    }} onClick={onClickPause}>
+                        {"Pause Timer"}
+                    </Button>
+                )}
+                <Button sx={{
+                    width: "150px", color: "#793205", fontFamily: "Arial, sans-serif", fontWeight: 800, backgroundColor: '#dbca9b', "&:hover": {
+                        backgroundColor: "#c2b693"
+                    },
+                }} onClick={onClickReset}>
+                    {"Reset Timer"}
+                </Button>
+            </DialogActions>
+        </Box>
     );
 }
