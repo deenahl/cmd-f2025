@@ -2,7 +2,8 @@ import { useRef, useState } from 'react';
 
 import Phaser from 'phaser';
 import { PhaserGame } from './game/PhaserGame';
-import MeditationDialog from './components/MeditationDialog'
+import BreathingDialog from './components/BreathingDialog'
+import StretchingDialog from './components/StretchingDialog';
 
 function App ()
 {
@@ -13,6 +14,7 @@ function App ()
     const phaserRef = useRef();
     const [spritePosition, setSpritePosition] = useState({ x: 0, y: 0 });
     const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [isSDialogOpen, setIsSDialogOpen] = useState(false);
 
     const changeScene = () => {
 
@@ -89,10 +91,13 @@ function App ()
                     <button className="button" onClick={addSprite}>Add New Sprite</button>
                 </div>
                 <div>
-                    <button className="button" onClick={() => setIsDialogOpen(true)}>Dialog</button>
+                    <button className="button" onClick={() => setIsDialogOpen(true)}>BDialog</button>
+                    <button className="button" onClick={() => setIsSDialogOpen(true)}>SDialog</button>
+
                 </div>
             </div>
-            {isDialogOpen && <MeditationDialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} />}
+            {isDialogOpen && <BreathingDialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)} />}
+            {isSDialogOpen && <StretchingDialog open={isSDialogOpen} onClose={() => setIsSDialogOpen(false)} />}
         </div>
     )
 }

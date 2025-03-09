@@ -4,9 +4,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Box from '@mui/material/Box';
 import { DialogContentText } from "@mui/material";
+import Tooltip from '@mui/material/Tooltip';
 
 // eslint-disable-next-line react/prop-types
-export default function Countdown({ onClose }) {
+export default function StretchingCountdown({ onClose }) {
     const [timer, setTimer] = useState("05:00");
     const [isPaused, setIsPaused] = useState(false);
     const [remainingTime, setRemainingTime] = useState(5 * 60 * 1000);
@@ -94,23 +95,29 @@ export default function Countdown({ onClose }) {
         </div>
         <DialogContentText sx={{color: "#793205"}}>
             {<strong>1. </strong>}
-            {"Put one hand on your chest and the other on your stomach."}
+            <Tooltip title="Slowly rotate your head to look over your left shoulder. Hold this position. Come back to the center then slowly rotate your head to look over your right shoulder. Come back to the center and repeat.">
+            {"Start with some head turns."}
+            </Tooltip>
             <br />
             {<strong>2. </strong>}
-            {"Breathe in through your nose. Feel the hand on your stomach rise"}
+            <Tooltip title="Cross your right arm over your chest. Place your left hand on your right elbow and gently pull your right arm across your body. Hold this position for up to 30 seconds. Repeat for the other arm.">
+            {"Move on to cross arm stretches"}
+            </Tooltip>
             <br />
-            <div style={{ paddingLeft: '20px' }}>
-            {"while your chest stays still."}
-            </div>
             {<strong>3. </strong>}
-            {"Exhale through your mouth and push out as much air as you can."}
+            <Tooltip title="Place one hand behind your back and pull it gently with the opposite hand. Switch the placement of your hands and repeat.">
+            {"Next let's do some hand behind back stretches"}
+            </Tooltip>
             <br />
-            <div style={{ paddingLeft: '20px' }}>
-            {"Feel the hand on your stomach move in while your chest stays still."}
-            </div>
             {<strong>4. </strong>}
-            {"Continue to breathe in through your nose and out through your mouth."}
+            <Tooltip title="Standing, place your hands on the back of your hips. Push your hips forward and arch your back and look up towards the ceiling. Focus on relaxing into this position as you hold.">
+            {"Continue with some standing back extensions."}
+            </Tooltip>
             <br />
+            {<strong>5. </strong>}
+            <Tooltip title="Lunge forward with one leg, keeping your chest upright and pushing your other hip forward. Return to standing and repeat on the other side.">
+            {"Let's end with some hip flexor stretches."}
+            </Tooltip>
       </DialogContentText>
       </DialogContent>
       <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
