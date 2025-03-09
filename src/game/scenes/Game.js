@@ -6,6 +6,8 @@ var cursors;
 var player;
 var cow;
 var chick;
+var journalCount = 0; 
+var journalCounterText;
 // var player_start;
 
 
@@ -44,6 +46,15 @@ export class Game extends Scene
         map.createLayer('Jen', [dirt_tileset, grass_tileset, water_tileset, hill_tileset]);
         const house_layer = map.createLayer('House', [wall_tileset, door_tileset, roof_tileset]);
         map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset, roof_tileset, hill_tileset]);
+
+        // Add journal counter
+        journalCounterText = this.add.text(20, 20, 'Journal Entries: 0', {
+            fontFamily: 'Arial',
+            fontSize: '24px',
+            color: '#793205',
+            backgroundColor: '#dbca9b',
+            padding: { x: 10, y: 5 }
+        });
 
         // // Player setup
         // player = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
@@ -85,6 +96,12 @@ export class Game extends Scene
         });
         
         cursors = this.input.keyboard.createCursorKeys();
+
+        // Listen for journal closed event
+        EventBus.on('journal-closed', () => {
+            journalCount++;
+            journalCounterText.setText('Journal Entries: ' + journalCount);
+        });
 
         // Cow Animations
         // cow = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'cow', 0).setScale(2.5);
