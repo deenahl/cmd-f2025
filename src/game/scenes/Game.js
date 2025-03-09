@@ -6,7 +6,7 @@ var cursors;
 var player;
 var cow;
 var chick;
-var journalCount = 0; 
+var journalCount = 1; 
 var journalCounterText;
 // var player_start;
 
@@ -56,6 +56,9 @@ export class Game extends Scene
             padding: { x: 10, y: 5 }
         });
 
+        
+
+
         // // Player setup
         this.player = this.physics.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
         this.player.setImmovable(false);
@@ -101,13 +104,9 @@ export class Game extends Scene
         });
         
         cursors = this.input.keyboard.createCursorKeys();
-
-        // Listen for journal closed event
-        EventBus.on('journal-closed', () => {
-            journalCount++;
-            journalCounterText.setText('Journal Entries: ' + journalCount);
-        });
-
+        // // Create Journal Trees
+        this.journalCrops = this.add.sprite(896, 208, 'tree0', journalCount);
+      
         // Cow Animations
         // cow = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'cow', 0).setScale(2.5);
         // this.anims.create({
@@ -133,6 +132,23 @@ export class Game extends Scene
             frameRate: 10,
             repeat: -1
         });
+
+        // Listen for journal closed event
+        EventBus.on('journal-closed', () => {
+            if (journalCount == 0) {
+                this.journalCrops.setTexture('tree1');
+            } else if (journalCount == 1) {
+                this.journalCrops.setTexture('tree2');
+            } else if (journalCount == 2) {
+                this.journalCrops.setTexture('tree3');
+            } else if (journalCount == 3) {
+                this.journalCrops.setTexture('tree4');
+            } else if (journalCount == 4) {
+                this.journalCrops.setTexture('tree0');
+            }
+            journalCount++;
+
+        });
                 
         // this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     
@@ -140,7 +156,6 @@ export class Game extends Scene
     }
 
     update() {
-        // cow.anims.play('cow', true);
         this.player.setVelocity(0);
 
         if (cursors.left.isDown) {
@@ -160,6 +175,8 @@ export class Game extends Scene
             this.player.setVelocity(0);
             this.player.anims.restart();
         }
+
+        
     }
 
     changeScene ()
