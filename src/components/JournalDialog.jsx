@@ -5,14 +5,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Box from '@mui/material/Box';
-import StretchingCountdown from './StretchingCountdown';
 import {useState} from 'react';
 import Journal from './Journal';
 
 // eslint-disable-next-line react/prop-types
 export default function JournalDialog({ open, onClose }) {
   const [isReady, setIsReady] = useState(false);
-  const [isJournalOpen, setIsJournalOpen] = useState(false);
 
     const handleClose = () => {
         onClose();
@@ -20,11 +18,9 @@ export default function JournalDialog({ open, onClose }) {
 
     const handleTimer = () => {
       setIsReady(true);
-      setIsJournalOpen(true);
     }
 
     const handleJournalClose = () => {
-        setIsJournalOpen(false);
         setIsReady(false);
         onClose();
     }
@@ -38,7 +34,7 @@ export default function JournalDialog({ open, onClose }) {
           PaperProps={{
               style: { 
                   position: 'absolute', 
-                  top: '30%', 
+                  top: '50%', 
                   left: '50%', 
                   transform: 'translate(-50%, -50%)'
               }
@@ -66,7 +62,7 @@ export default function JournalDialog({ open, onClose }) {
           </DialogActions>
         </Box>
       ) : (
-        <Journal open={isJournalOpen} onClose={handleJournalClose} />
+        <Journal onClose={handleJournalClose} />
       )}
       </Dialog>
     );
