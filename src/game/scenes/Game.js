@@ -39,20 +39,18 @@ export class Game extends Scene
         var milk_tileset = map.addTilesetImage("Milk", "milk");
         var bridge_tileset = map.addTilesetImage("Bridge", "bridge"); 
 
-        // map.createLayer('Hills', [hill_tileset]);
+        // create layers
         const hill_layer = map.createLayer('Hills', [hill_tileset, water_tileset, grass_tileset]);
         map.createLayer('Jen', [dirt_tileset, grass_tileset, water_tileset, hill_tileset]);
         const house_layer = map.createLayer('House', [wall_tileset, door_tileset, roof_tileset]);
         const collision_layer = map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset, roof_tileset, hill_tileset]);
 
         // // Player setup
-        // player = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
         this.player = this.physics.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'player', 0).setScale(2.5);
         this.player.setImmovable(false);
         this.player.setCollideWorldBounds(true);
         this.player.body.setSize(16, 16);
         this.player.body.setOffset(16, 16);
-        // player_start = player.frame;
 
         // collision setup
         hill_layer.setCollision([303]);
@@ -62,7 +60,7 @@ export class Game extends Scene
         collision_layer.setCollision([80, 233, 234, 235, 236, 237, 241, 243, 244, 246, 302, 303, 304, 305]);
         this.physics.add.collider(this.player, collision_layer);
 
-
+        // Player animation setup
         this.anims.create({
             key: 'player-left',
             frames: this.anims.generateFrameNames('player', { start: 8, end: 11}),
