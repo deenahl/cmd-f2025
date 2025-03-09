@@ -112,7 +112,7 @@ function App ()
             >
             {''}
             </button>
-            {isStretchDialogOpen && <StretchingDialog open={isStretchDialogOpen} onClose={() => setIsSDialogOpen(false)} />}
+            {isStretchDialogOpen && <StretchingDialog open={isStretchDialogOpen} onClose={() => setIsStretchDialogOpen(false)} />}
             <button
                 onClick={() => setIsJournalDialogOpen(true)}
                 style={{
