@@ -26,10 +26,11 @@ export class Game extends Scene
         var roof_tileset = map.addTilesetImage("House_Root", "roof");
         var wall_tileset = map.addTilesetImage("House_Walls", "walls");
         var water_tileset = map.addTilesetImage("Water", 'water');
-        map.createLayer('Hills', [hill_tileset]);
+        map.createLayer('Hills', [hill_tileset, water_tileset, grass_tileset]);
+        map.createLayer('Jen', [dirt_tileset, grass_tileset, water_tileset, hill_tileset]);
         map.createLayer('House', [wall_tileset, door_tileset]);
         map.createLayer('Britney', [dirt_tileset, grass_tileset, fence_tileset, water_tileset]);
-        map.createLayer('Jen', []);
+
         // map.createFromObjects('land_object', {
         //     name: "land",
         //     class: Land
