@@ -1,3 +1,4 @@
+
 import { EventBus } from '../EventBus';
 import { Scene } from 'phaser';
 
@@ -10,16 +11,16 @@ export class Game extends Scene
 
     create ()
     {
-        this.cameras.main.setBackgroundColor(0x00ff00);
+        // Create Tiled Map
+        var map = this.make.tilemap({ key: "map" });
+        var grass_tileset = map.addTilesetImage('Hills','hill_tiles');
+        map.createLayer('hills', [grass_tileset]);
 
-        this.add.image(512, 384, 'background').setAlpha(0.5);
+        // Player setup
 
-        this.add.text(512, 384, 'Make something fun!\nand share it with us:\nsupport@phaser.io', {
-            fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
-            stroke: '#000000', strokeThickness: 8,
-            align: 'center'
-        }).setOrigin(0.5).setDepth(100);
-
+        
+        this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    
         EventBus.emit('current-scene-ready', this);
     }
 
