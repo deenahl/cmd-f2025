@@ -29,7 +29,7 @@ export default function StretchingDialog({ open, onClose }) {
           PaperProps={{
               style: { 
                   position: 'absolute', 
-                  top: '50%', 
+                  top: '45%', 
                   left: '50%', 
                   transform: 'translate(-50%, -50%)'
               }

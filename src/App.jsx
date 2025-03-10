@@ -26,7 +26,7 @@ function App() {
        style={{
         position: "fixed",
         top: 0,
-        left: "20%",
+        left: "21.5%",
         width: "60vw",
         height: "100vh",
         backgroundImage: `url("https://img.itch.zone/aW1nLzgxNTEyNDEuZ2lm/original/5VFXUt.gif")`,
@@ -42,7 +42,7 @@ function App() {
        style={{
         position: "fixed",
         top: 0,
-        left: "20%",
+        left: "21.5%",
         width: "60vw",
         height: "100vh",
         backgroundImage: `url("https://img.itch.zone/aW1nLzgxNTEyNTMuZ2lm/original/f0xwbV.gif")`,
@@ -59,7 +59,7 @@ function App() {
        style={{
         position: "fixed",
         top: 0,
-        left: "20%",
+        left: "21.5%",
         width: "60vw",
         height: "100vh",
         backgroundImage: `url("https://img.itch.zone/aW1nLzgxNTEyNDUuZ2lm/original/haqTgP.gif")`,
