@@ -20,3 +20,6 @@ This was a fun and challenging learning experience for all of us. 2/3 of our tea
 
 ## What's next for Mindful Meadows❓
 For the future, we would like to track user progress of different tasks and utilize a database to store user data. With this, we hope to show the user's progress as plant growth in their meadow. Adding more quick mental health exercises would provide users more variety and hopefully find exercise they like. Lastly, it would be great to add more animations and add more animated elements to the UI.
+
+![Launch Page](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/314/607/datas/gallery.jpg)
+![Game Map](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/314/747/datas/gallery.jpg)
